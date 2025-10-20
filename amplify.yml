@@ -2,13 +2,16 @@ version: 1
 frontend:
   phases:
     preBuild:
-      commands: []
+      commands:
+        - npm ci --cache .npm --prefer-offline
     build:
       commands:
-        - echo "No build step. Serving static files."
+        - npm run build
   artifacts:
-    baseDirectory: public
+    baseDirectory: dist
     files:
       - '**/*'
   cache:
-    paths: []
+    paths:
+      - .npm/**/*
+      - node_modules/**/*
