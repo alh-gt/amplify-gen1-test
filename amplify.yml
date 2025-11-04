@@ -1,11 +1,9 @@
 version: 1
 backend:
   phases:
-    preBuild:
-      commadns:
-       - set -euo pipefail
     build:
       commands:
+        - set -euo pipefail
         - amplifyPush --simple
 frontend:
   phases:
