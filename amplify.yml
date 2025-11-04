@@ -3,7 +3,6 @@ backend:
   phases:
     build:
       commands:
-        - set -euo pipefail
         - amplifyPush --simple
 frontend:
   phases:
