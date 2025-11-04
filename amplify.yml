@@ -4,8 +4,6 @@ backend:
     build:
       commands:
         - set -euo pipefail
-        - npx -y @aws-amplify/cli@14.1.0 -v | tee /tmp/amplify_ver.txt
-        - grep -q "^14\." /tmp/amplify_ver.txt || { echo "CLI14 not active"; exit 1; }
         - amplifyPush --simple
 frontend:
   phases:
